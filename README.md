@@ -45,9 +45,7 @@ qualitative comparisons below are stable.*
   failure mode; query Ionocytes were labeled correctly 11/12 times (92%) despite only ~34
   labeled Ionocytes in the reference, because their CFTR-high signature is distinctive. The
   lowest accuracies were common types with close neighbors (Basal 2 at 88%).
-- **Errors followed biological structure**, not random scatter: the clearest systematic confusion
-  was Basal 2 → Basal 1 (~11%, shared lineage), with Secretory acting as a mild sink for several
-  airway epithelial types.
+- **Errors followed biological structure**,rather than random scatter. Tthe clearest confusion was between Basal 2 and Basal 1         (~11%), which is a within-lineage confusion between basal-cell states. Secretory cells absorbed small fractions of several airway    epithelial types, which is consistent with basal cells being the shared progenitor of secretory and ciliated lineages.               Additionally, secretory cells occupy a transcriptionally central progenitor-associated state.
 - **Prediction confidence** carried real signal (correct calls averaged 0.98, wrong calls 0.83)
   but the distributions overlapped; no threshold cleanly separates right from wrong, consistent
   with known neural-network overconfidence. Confidence is useful for *prioritizing* manual review
