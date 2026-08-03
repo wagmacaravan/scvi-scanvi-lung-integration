@@ -1,0 +1,15 @@
+# Data (downloaded on first run, ~628 MB — do not commit)
+*.h5ad
+
+# Saved models
+scvi_lung_model/
+scvi_lung_scanvi_model/
+scvi_lung_scanvi_lt_model/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
