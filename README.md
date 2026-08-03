@@ -44,7 +44,7 @@ qualitative comparisons below are stable.*
 - **Label transfer** reached **91.4% accuracy** on 6,490 held-out cells. Rarity was not the
   failure mode; query Ionocytes were labeled correctly 11/12 times (92%) despite only ~34
   labeled Ionocytes in the reference, because their CFTR-high signature is distinctive. The
-  lowest accuracies were *common* types with close neighbors (Basal 2 at 88%).
+  lowest accuracies were common types with close neighbors (Basal 2 at 88%).
 - **Errors followed biological structure**, not random scatter: the clearest systematic confusion
   was Basal 2 → Basal 1 (~11%, shared lineage), with Secretory acting as a mild sink for several
   airway epithelial types.
