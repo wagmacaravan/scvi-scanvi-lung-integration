@@ -7,8 +7,8 @@ then a semi-supervised model (**scANVI**) is used for cross-batch cell-type labe
 Integration quality is quantified against a PCA baseline with the `scib-metrics` suite, and
 label transfer is evaluated on a held-out query set with a confidence-based triage analysis.
 
-This project moves beyond *running* single-cell pipelines to *training and evaluating* the
-models underneath them — reading loss curves, choosing and defending hyperparameters,
+This project moves beyond running single-cell pipelines to training and evaluating the
+models underneath them such as reading loss curves, choosing and defending hyperparameters,
 benchmarking against baselines, and characterizing failure modes honestly.
 
 ## Pipeline
@@ -35,21 +35,21 @@ benchmarking against baselines, and characterizing failure modes honestly.
 qualitative comparisons below are stable.*
 
 - **scVI** more than doubled the batch-correction score over uncorrected PCA (0.29 → 0.61) at a
-  ~1-point bio-conservation cost — it removed batch variance without materially sacrificing
+  ~1-point bio-conservation cost and it removed batch variance without materially sacrificing
   biological structure.
 - **scANVI** recovered and exceeded bio-conservation (→ 0.71, beating even PCA) for a small
   batch-correction trade, giving the best overall integration. The gain concentrated in
   clustering-recovery metrics (KMeans NMI 0.66 → 0.76), consistent with label supervision
   sharpening cell-type boundaries.
 - **Label transfer** reached **91.4% accuracy** on 6,490 held-out cells. Rarity was not the
-  failure mode — query Ionocytes were labeled correctly 11/12 times (92%) despite only ~34
+  failure mode; query Ionocytes were labeled correctly 11/12 times (92%) despite only ~34
   labeled Ionocytes in the reference, because their CFTR-high signature is distinctive. The
   lowest accuracies were *common* types with close neighbors (Basal 2 at 88%).
 - **Errors followed biological structure**, not random scatter: the clearest systematic confusion
   was Basal 2 → Basal 1 (~11%, shared lineage), with Secretory acting as a mild sink for several
   airway epithelial types.
 - **Prediction confidence** carried real signal (correct calls averaged 0.98, wrong calls 0.83)
-  but the distributions overlapped — no threshold cleanly separates right from wrong, consistent
+  but the distributions overlapped; no threshold cleanly separates right from wrong, consistent
   with known neural-network overconfidence. Confidence is useful for *prioritizing* manual review
   (flagging the lowest-confidence ~10% catches roughly half the errors), not for certifying
   high-confidence calls.
